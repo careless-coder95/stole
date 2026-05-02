@@ -12,8 +12,8 @@ async def cb_list_accounts(client: Client, callback: CallbackQuery):
     if not accounts:
         await callback.message.edit_text(
             "<blockquote>📂 <u>𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u></blockquote>\n\n"
-            "<blockquote><b>❌ Koi account saved nahi hai.</b>\n"
-            "<b>➤ Add Account se pehle account add karo.</b></blockquote>",
+            "<blockquote><b>🚫 No account is saved.</b>\n"
+            "<b>➤ Add your account first.</b></blockquote>",
             parse_mode=ParseMode.HTML,
             reply_markup=kb_main_menu(uid)
         )
@@ -22,7 +22,7 @@ async def cb_list_accounts(client: Client, callback: CallbackQuery):
     phones = list(accounts.keys())
     await callback.message.edit_text(
         f"<blockquote>📂 <u>𝗬𝗢𝗨𝗥 𝗦𝗔𝗩𝗘𝗗 𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u> ({len(phones)})</blockquote>\n\n"
-        "<blockquote><b>➤ Kisi account pe click karo details dekhne ke liye.</b></blockquote>",
+        "<blockquote><b>➤ Click on any account to view details.</b></blockquote>",
         parse_mode=ParseMode.HTML,
         reply_markup=kb_accounts_list(phones)
     )
@@ -53,7 +53,7 @@ async def cb_delete_account(client: Client, callback: CallbackQuery):
     uid = callback.from_user.id
     phone = callback.data.split(":", 1)[1]
     delete_account(uid, phone)
-    await callback.answer("✅ Account delete ho gaya!", show_alert=True)
+    await callback.answer("✅ Account deleted!", show_alert=True)
 
     accounts = get_all_accounts(uid)
     phones = list(accounts.keys())
@@ -61,14 +61,14 @@ async def cb_delete_account(client: Client, callback: CallbackQuery):
     if not phones:
         await callback.message.edit_text(
             "<blockquote>📂 <u>𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u></blockquote>\n\n"
-            "<blockquote><b>❌ Koi account nahi bacha.</b></blockquote>",
+            "<blockquote><b>🚫 No account left.</b></blockquote>",
             parse_mode=ParseMode.HTML,
             reply_markup=kb_main_menu(uid)
         )
     else:
         await callback.message.edit_text(
             f"<blockquote>📂 <u>𝗬𝗢𝗨𝗥 𝗦𝗔𝗩𝗘𝗗 𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u> ({len(phones)})</blockquote>\n\n"
-            "<blockquote><b>➤ Kisi account pe click karo details dekhne ke liye.</b></blockquote>",
+            "<blockquote><b>➤ Click on any account to view details.</b></blockquote>",
             parse_mode=ParseMode.HTML,
             reply_markup=kb_accounts_list(phones)
         )
