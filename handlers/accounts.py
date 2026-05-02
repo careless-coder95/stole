@@ -11,7 +11,7 @@ async def cb_list_accounts(client: Client, callback: CallbackQuery):
 
     if not accounts:
         await callback.message.edit_text(
-            "<blockquote>📂 <u>𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u></blockquote>\n\n"
+            "<blockquote>📂 <u>𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u></blockquote>\n"
             "<blockquote><b>🚫 No account is saved.</b>\n"
             "<b>➤ Add your account first.</b></blockquote>",
             parse_mode=ParseMode.HTML,
@@ -21,7 +21,7 @@ async def cb_list_accounts(client: Client, callback: CallbackQuery):
 
     phones = list(accounts.keys())
     await callback.message.edit_text(
-        f"<blockquote>📂 <u>𝗬𝗢𝗨𝗥 𝗦𝗔𝗩𝗘𝗗 𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u> ({len(phones)})</blockquote>\n\n"
+        f"<blockquote>📂 <u>𝗬𝗢𝗨𝗥 𝗦𝗔𝗩𝗘𝗗 𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u> ({len(phones)})</blockquote>\n"
         "<blockquote><b>➤ Click on any account to view details.</b></blockquote>",
         parse_mode=ParseMode.HTML,
         reply_markup=kb_accounts_list(phones)
@@ -40,7 +40,7 @@ async def cb_account_detail(client: Client, callback: CallbackQuery):
     password_display = "✅ Set hai" if acc.get("password") else "❌ Nahi hai"
 
     await callback.message.edit_text(
-        "<blockquote>📱 <u>𝗔𝗖𝗖𝗢𝗨𝗡𝗧 𝗗𝗘𝗧𝗔𝗜𝗟𝗦</u></blockquote>\n\n"
+        "<blockquote>📱 <u>𝗔𝗖𝗖𝗢𝗨𝗡𝗧 𝗗𝗘𝗧𝗔𝗜𝗟𝗦</u></blockquote>\n"
         f"<blockquote><b>📱 Number: <code>{acc['phone']}</code></b>\n"
         f"<b>🔑 2FA: {password_display}</b>\n"
         "<b>🔒 Session: Saved ✅</b></blockquote>",
@@ -60,14 +60,14 @@ async def cb_delete_account(client: Client, callback: CallbackQuery):
 
     if not phones:
         await callback.message.edit_text(
-            "<blockquote>📂 <u>𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u></blockquote>\n\n"
+            "<blockquote>📂 <u>𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u></blockquote>\n"
             "<blockquote><b>🚫 No account left.</b></blockquote>",
             parse_mode=ParseMode.HTML,
             reply_markup=kb_main_menu(uid)
         )
     else:
         await callback.message.edit_text(
-            f"<blockquote>📂 <u>𝗬𝗢𝗨𝗥 𝗦𝗔𝗩𝗘𝗗 𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u> ({len(phones)})</blockquote>\n\n"
+            f"<blockquote>📂 <u>𝗬𝗢𝗨𝗥 𝗦𝗔𝗩𝗘𝗗 𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u> ({len(phones)})</blockquote>\n"
             "<blockquote><b>➤ Click on any account to view details.</b></blockquote>",
             parse_mode=ParseMode.HTML,
             reply_markup=kb_accounts_list(phones)
