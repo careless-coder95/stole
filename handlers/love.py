@@ -56,9 +56,9 @@ async def handle_love_flow(client: Client, message: Message):
         set_state(uid, "awaiting_love_count", data={"reason": text})
 
         await message.reply(
-            f"<blockquote>✅ <b>Reason accepted: <code>{text}</code></b></blockquote>\n\n"
-            "<blockquote>❤️ <u>𝗛𝗢𝗪 𝗠𝗔𝗡𝗬 𝗧𝗜𝗠𝗘𝗦?</u></blockquote>\n\n"
-            "<blockquote><b>➤ Enter a number (jaise: <code>6</code>)</b></blockquote>\n\n"
+            f"<blockquote>✅ <b>Reason accepted: <code>{text}</code></b></blockquote>\n"
+            "<blockquote>❤️ <u>𝗛𝗢𝗪 𝗠𝗔𝗡𝗬 𝗧𝗜𝗠𝗘𝗦?</u></blockquote>\n"
+            "<blockquote><b>➤ Enter a number (jaise: <code>6</code>)</b></blockquote>\n"
             "<b>❌ Cancel: /cancel</b>",
             parse_mode=ParseMode.HTML
         )
@@ -78,10 +78,10 @@ async def handle_love_flow(client: Client, message: Message):
         clear_state(uid)
 
         status_msg = await message.reply(
-            f"<blockquote>❤️ <u>𝗟𝗢𝗩𝗘 𝗦𝗧𝗔𝗥𝗧𝗜𝗡𝗚...</u></blockquote>\n\n"
+            f"<blockquote>❤️ <u>𝗟𝗢𝗩𝗘 𝗦𝗧𝗔𝗥𝗧𝗜𝗡𝗚...</u></blockquote>\n"
             f"<blockquote><b>💬 Reason: <code>{reason}</code></b>\n"
             f"<b>🔢 Count: <code>{count}</code></b>\n"
-            f"<b>📱 Accounts: <code>{acc_count}</code></b></blockquote>\n\n"
+            f"<b>📱 Accounts: <code>{acc_count}</code></b></blockquote>\n"
             "─────────────────────",
             parse_mode=ParseMode.HTML
         )
@@ -95,8 +95,8 @@ async def handle_love_flow(client: Client, message: Message):
             display = "\n".join(love_lines)
             try:
                 await status_msg.edit_text(
-                    f"<blockquote>❤️ <u>𝗟𝗢𝗩𝗘 𝗜𝗡 𝗣𝗥𝗢𝗚𝗥𝗘𝗦𝗦...</u></blockquote>\n\n"
-                    f"<blockquote><b>💬 Reason: <code>{reason}</code></b></blockquote>\n\n"
+                    f"<blockquote>❤️ <u>𝗟𝗢𝗩𝗘 𝗜𝗡 𝗣𝗥𝗢𝗚𝗥𝗘𝗦𝗦...</u></blockquote>\n"
+                    f"<blockquote><b>💬 Reason: <code>{reason}</code></b></blockquote>\n"
                     f"{display}",
                     parse_mode=ParseMode.HTML
                 )
@@ -107,9 +107,9 @@ async def handle_love_flow(client: Client, message: Message):
 
         final_text = "\n".join(love_lines)
         await status_msg.edit_text(
-            f"<blockquote>❤️ <u>𝗟𝗢𝗩𝗘 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗘!</u></blockquote>\n\n"
-            f"<blockquote><b>💬 Reason: <code>{reason}</code></b></blockquote>\n\n"
-            f"{final_text}\n\n"
+            f"<blockquote>❤️ <u>𝗟𝗢𝗩𝗘 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗘!</u></blockquote>\n"
+            f"<blockquote><b>💬 Reason: <code>{reason}</code></b></blockquote>\n"
+            f"{final_text}\n"
             "─────────────────────\n"
             "<b>☠️ Loving complete wait for upto 1hr to see your response</b>",
             parse_mode=ParseMode.HTML,
