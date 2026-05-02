@@ -5,43 +5,35 @@ from utils.keyboards import kb_start, kb_main_menu, kb_setup_guide
 from utils.state import clear_state
 
 WELCOME_TEXT = """
-<blockquote expandable>🔐 <u>𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 𝗩𝗔𝗨𝗟𝗧 𝗕𝗢𝗧</u></blockquote>
-
-<blockquote><b>💼 𝐀 sᴇᴄᴜʀᴇ sʏsᴛᴇᴍ ᴛᴏ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ᴍᴜʟᴛɪᴘʟᴇ ᴛᴇʟᴇɢʀᴀᴍ ᴀᴄᴄᴏᴜɴᴛs ɪɴ ᴏɴᴇ ᴘʟᴀᴄᴇ.</b></blockquote>
-
-<blockquote expandable><b>⚡ ꜰᴀsᴛ • ᴏʀɢᴀɴɪᴢᴇᴅ • ᴇꜰꜰɪᴄɪᴇɴᴛ</b>
-<b>🔒 sᴇᴄᴜʀᴇ &amp; ᴘʀɪᴠᴀᴛᴇ sᴇssɪᴏɴs</b>
-<b>📊 ᴄʟᴇᴀɴ • sɪᴍᴘʟᴇ • ᴜsᴇʀ-ꜰʀɪᴇɴᴅʟʏ</b></blockquote>
-
-<blockquote expandable><b>⚠️ 𝚂𝚎𝚜𝚜𝚒𝚘𝚗𝚜 𝚜𝚊𝚟𝚎𝚍 𝚕𝚘𝚌𝚊𝚕𝚕𝚢 — 𝚗𝚎𝚟𝚎𝚛 𝚜𝚑𝚊𝚛𝚎𝚍 𝚊𝚗𝚢𝚠𝚑𝚎𝚛𝚎.</b></blockquote>
+<blockquote expandable>⚖️<u>𝗞𝗔𝗥𝗠𝗔 𝗠𝗔𝗦𝗦 𝗥𝗘𝗣𝗢𝗥𝗧𝗘𝗥</u>⚖️</blockquote>
+<blockquote><b>💀 𝐀 ᴘᴏᴡᴇʀғᴜʟ sʏsᴛᴇᴍ ᴛᴏ ᴀᴄᴄᴜʀᴀᴛᴇʟʏ ʙᴀɴ ᴀɴʏᴏɴᴇ's ᴛᴇʟᴇɢʀᴀᴍ ᴀᴄᴄᴏᴜɴᴛ ʙʏ ʙᴜʟᴋ ʀᴇᴘᴏʀᴛɪɴɢ ᴛʜᴇᴍ.</b></blockquote>
+<blockquote expandable><b>⚡ ꜰᴀsᴛ • ᴀᴜᴛᴏᴍᴀᴛᴇᴅ • ᴇғғɪᴄɪᴇɴᴛ.</b>
+<b>🔒 sᴇᴄᴜʀᴇ & ᴘʀɪᴠᴀᴛᴇ sᴇssɪᴏɴs.</b>
+<b>📊 cʟᴇᴀɴ • sɪᴍᴘʟᴇ • ᴜsᴇʀ - ꜰʀɪᴇɴᴅʟʏ</b></blockquote>
+<blockquote expandable><b>⚠️ 𝚄𝚜𝚎 𝚛𝚎𝚜𝚙𝚘𝚗𝚜𝚒𝚋𝚕𝚢 — 𝙰𝚌𝚝𝚒𝚘𝚗𝚜 𝚑𝚊𝚟𝚎 𝚌𝚘𝚗𝚜𝚎𝚚𝚞𝚎𝚗𝚌𝚎𝚜.</b></blockquote>
 """
 
 MAIN_MENU_TEXT = """
-<blockquote expandable><b>❖ <u>𝙼𝙰𝙸𝙽 𝙼𝙴𝙽𝚄</u> :</b></blockquote>
-
-<blockquote expandable><b>➥ 𝐀ᴅᴅ ʏᴏᴜʀ ᴀᴄᴄᴏᴜɴᴛs ᴜsɪɴɢ ᴘʜᴏɴᴇ + ᴏᴛᴘ.</b>
-<b>➥ 𝐌ᴀɴᴀɢᴇ ᴀɴᴅ ᴠɪᴇᴡ ᴀʟʟ sᴀᴠᴇᴅ ᴀᴄᴄᴏᴜɴᴛs.</b></blockquote>
+<blockquote expandable><b>❖ <u>𝙼𝙴𝚃𝙷𝙾𝙳 𝙾𝙵 𝚁𝙴𝙿𝙾𝚃𝙸𝙽𝙶</u> :</b></blockquote>
+<blockquote expandable><b>➥ 𝐅ɪʀsᴛ, ᴀᴅᴅ ᴀ ᴍɪɴɪᴍᴜᴍ ᴏғ 10 ᴀᴄᴄᴏᴜɴᴛs.</b>
+<b>➥ 𝐓ʜᴇɴ sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴛᴀʀɢᴇᴛ ᴀɴᴅ sᴛᴀʀᴛ ʀᴇᴘᴏʀᴛɪɴɢ.</b></blockquote>
 """
 
 SETUP_GUIDE_TEXT = """
 <blockquote expandable>📘 <u>𝗨𝗦𝗔𝗚𝗘 𝗚𝗨𝗜𝗗𝗘</u> :</blockquote>
 
 <blockquote>1️⃣ <u>𝗔𝗗𝗗 𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u>
-<b>➤ Add your Telegram accounts using phone number + OTP.</b></blockquote>
+<b>➤ Add multiple active accounts to ensure better coverage and efficiency.</b></blockquote>
+<blockquote>2️⃣ <u>𝗣𝗥𝗘𝗣𝗔𝗥𝗘 𝗘𝗡𝗩𝗜𝗥𝗢𝗡𝗠𝗘𝗡𝗧</u>
+<b>➤ Create at least 6-7 public groups from all your IDs. </b></blockquote>
+<blockquote>3️⃣ <u>𝗦𝗘𝗟𝗘𝗖𝗧 𝗧𝗔𝗥𝗚𝗘𝗧</u>
+<b>➤ Choose the content or profile that requires reporting.</b></blockquote>
+<blockquote>4️⃣ <u>𝗖𝗛𝗢𝗢𝗦𝗘 𝗥𝗘𝗔𝗦𝗢𝗡</u>
+<b>➤ Select an appropriate and valid reason for the report.</b></blockquote>
+<blockquote>5️⃣ <u>𝗦𝗧𝗔𝗥𝗧 𝗣𝗥𝗢𝗖𝗘𝗦𝗦</u>
+<b>➤ Initiate reporting and monitor progress from the dashboard.</b></blockquote>
 
-<blockquote>2️⃣ <u>𝗩𝗜𝗘𝗪 𝗔𝗖𝗖𝗢𝗨𝗡𝗧𝗦</u>
-<b>➤ See all your saved accounts in one place.</b></blockquote>
-
-<blockquote>3️⃣ <u>𝗦𝗘𝗧 𝗧𝗔𝗥𝗚𝗘𝗧</u>
-<b>➤ Save a user's info by username or user ID.</b></blockquote>
-
-<blockquote>4️⃣ <u>𝗦𝗧𝗔𝗥𝗧 𝗟𝗢𝗩𝗘</u>
-<b>➤ Print love messages with reason and count.</b></blockquote>
-
-<blockquote>5️⃣ <u>𝗦𝗘𝗖𝗨𝗥𝗜𝗧𝗬</u>
-<b>➤ All sessions stored locally on your server only.</b></blockquote>
-
-<b><i>🚀 Your data. Your control.</i></b>
+<i>🚀 Stay safe and use wisely.</i>
 """
 
 PHOTO_URL = "https://imghosting.in/host/z8lk74"
